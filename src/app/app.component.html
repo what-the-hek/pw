@@ -3,7 +3,8 @@
 <div>
   <label>Enter length</label>
   <input 
-  (input)="onChangeLength($event.target.value)"/>
+  (input)="onChangeLength($event.target.value)"
+  required/>
 </div>
 
 <div>
@@ -28,7 +29,9 @@
 </div>
 
 <div>
-  <button (click)="onButtonClick()">Generate!</button>
+  <button 
+  [disabled]="!(length && (includeLetters || includeSymbols || includeNumbers))" 
+  (click)="onButtonClick()">Generate!</button>
 </div>
 
 <div>

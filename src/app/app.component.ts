@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -15,12 +15,9 @@ export class AppComponent {
   includeSymbols = false;
   length = 0;
 
-  onChangeLength(value: string) {
+  onChangeLength(value: string): void {
     const parsedValue = parseInt(value);
-    if(parsedValue==null){
-      return
-    }
-    else if(!isNaN(parsedValue)) {
+    if(!isNaN(parsedValue)) {
       this.length = parsedValue
     }
   }
