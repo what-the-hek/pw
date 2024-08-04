@@ -15,10 +15,11 @@ export class AppComponent {
   includeSymbols = false;
   length = 0;
 
-  onChangeLength(value: string): void {
-    const parsedValue = parseInt(value);
-    if(!isNaN(parsedValue)) {
-      this.length = parsedValue
+  onChangeLength(event: Event) {
+    const target = event.target as HTMLInputElement;
+    const parsedValue = parseInt(target.value);
+    if (!isNaN(parsedValue)) {
+      this.length = parsedValue;
     }
   }
 
